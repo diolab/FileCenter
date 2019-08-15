@@ -77,11 +77,6 @@
             // compSize
             // 
             this.compSize.Location = new System.Drawing.Point(110, 58);
-            this.compSize.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
             this.compSize.Minimum = new decimal(new int[] {
             2,
             0,
