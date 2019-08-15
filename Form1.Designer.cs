@@ -35,6 +35,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.path = new System.Windows.Forms.TextBox();
             this.resultView = new System.Windows.Forms.DataGridView();
+            this.Column3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.ファイルFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.終了XToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,20 +47,19 @@
             this.フォルダ作成CToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.testbtn = new System.Windows.Forms.Button();
             this.topText = new System.Windows.Forms.ComboBox();
-            this.Column3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dirSize = new System.Windows.Forms.NumericUpDown();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.compSize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.resultView)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dirSize)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(36, 60);
+            this.label1.Location = new System.Drawing.Point(374, 35);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 12);
             this.label1.TabIndex = 0;
@@ -64,15 +68,15 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(155, 60);
+            this.label2.Location = new System.Drawing.Point(11, 62);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 12);
+            this.label2.Size = new System.Drawing.Size(93, 12);
             this.label2.TabIndex = 2;
-            this.label2.Text = "比較文字数：";
+            this.label2.Text = "ファイル先頭無視：";
             // 
             // compSize
             // 
-            this.compSize.Location = new System.Drawing.Point(232, 57);
+            this.compSize.Location = new System.Drawing.Point(110, 58);
             this.compSize.Maximum = new decimal(new int[] {
             10,
             0,
@@ -87,14 +91,14 @@
             this.compSize.Size = new System.Drawing.Size(47, 19);
             this.compSize.TabIndex = 3;
             this.compSize.Value = new decimal(new int[] {
-            3,
+            9,
             0,
             0,
             0});
             // 
             // run
             // 
-            this.run.Location = new System.Drawing.Point(361, 55);
+            this.run.Location = new System.Drawing.Point(416, 55);
             this.run.Name = "run";
             this.run.Size = new System.Drawing.Size(70, 23);
             this.run.TabIndex = 4;
@@ -113,20 +117,20 @@
             // 
             // path
             // 
-            this.path.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.path.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.path.Location = new System.Drawing.Point(88, 32);
             this.path.Name = "path";
-            this.path.Size = new System.Drawing.Size(343, 19);
+            this.path.Size = new System.Drawing.Size(280, 19);
             this.path.TabIndex = 6;
             // 
             // resultView
             // 
             this.resultView.AllowUserToAddRows = false;
             this.resultView.AllowUserToDeleteRows = false;
-            this.resultView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.resultView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.resultView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.resultView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.resultView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -140,66 +144,8 @@
             this.resultView.RowHeadersVisible = false;
             this.resultView.RowTemplate.Height = 21;
             this.resultView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.resultView.Size = new System.Drawing.Size(419, 196);
+            this.resultView.Size = new System.Drawing.Size(476, 196);
             this.resultView.TabIndex = 7;
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ファイルFToolStripMenuItem,
-            this.ツールTToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(443, 24);
-            this.menuStrip1.TabIndex = 8;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // ファイルFToolStripMenuItem
-            // 
-            this.ファイルFToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.終了XToolStripMenuItem});
-            this.ファイルFToolStripMenuItem.Name = "ファイルFToolStripMenuItem";
-            this.ファイルFToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
-            this.ファイルFToolStripMenuItem.Text = "ファイル(&F)";
-            // 
-            // 終了XToolStripMenuItem
-            // 
-            this.終了XToolStripMenuItem.Name = "終了XToolStripMenuItem";
-            this.終了XToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
-            this.終了XToolStripMenuItem.Text = "終了(&X)";
-            // 
-            // ツールTToolStripMenuItem
-            // 
-            this.ツールTToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.フォルダ作成CToolStripMenuItem});
-            this.ツールTToolStripMenuItem.Name = "ツールTToolStripMenuItem";
-            this.ツールTToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.ツールTToolStripMenuItem.Text = "ツール(&T)";
-            // 
-            // フォルダ作成CToolStripMenuItem
-            // 
-            this.フォルダ作成CToolStripMenuItem.Name = "フォルダ作成CToolStripMenuItem";
-            this.フォルダ作成CToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
-            this.フォルダ作成CToolStripMenuItem.Text = "フォルダ作成(&C)";
-            this.フォルダ作成CToolStripMenuItem.Click += new System.EventHandler(this.フォルダ作成CToolStripMenuItem_Click);
-            // 
-            // testbtn
-            // 
-            this.testbtn.Location = new System.Drawing.Point(285, 55);
-            this.testbtn.Name = "testbtn";
-            this.testbtn.Size = new System.Drawing.Size(70, 23);
-            this.testbtn.TabIndex = 9;
-            this.testbtn.Text = "テスト";
-            this.testbtn.UseVisualStyleBackColor = true;
-            this.testbtn.Click += new System.EventHandler(this.testbtn_Click);
-            // 
-            // topText
-            // 
-            this.topText.FormattingEnabled = true;
-            this.topText.Location = new System.Drawing.Point(89, 58);
-            this.topText.Name = "topText";
-            this.topText.Size = new System.Drawing.Size(60, 20);
-            this.topText.TabIndex = 10;
             // 
             // Column3
             // 
@@ -236,11 +182,103 @@
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ファイルFToolStripMenuItem,
+            this.ツールTToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(500, 24);
+            this.menuStrip1.TabIndex = 8;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // ファイルFToolStripMenuItem
+            // 
+            this.ファイルFToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.終了XToolStripMenuItem});
+            this.ファイルFToolStripMenuItem.Name = "ファイルFToolStripMenuItem";
+            this.ファイルFToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+            this.ファイルFToolStripMenuItem.Text = "ファイル(&F)";
+            // 
+            // 終了XToolStripMenuItem
+            // 
+            this.終了XToolStripMenuItem.Name = "終了XToolStripMenuItem";
+            this.終了XToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.終了XToolStripMenuItem.Text = "終了(&X)";
+            // 
+            // ツールTToolStripMenuItem
+            // 
+            this.ツールTToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.フォルダ作成CToolStripMenuItem});
+            this.ツールTToolStripMenuItem.Name = "ツールTToolStripMenuItem";
+            this.ツールTToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.ツールTToolStripMenuItem.Text = "ツール(&T)";
+            // 
+            // フォルダ作成CToolStripMenuItem
+            // 
+            this.フォルダ作成CToolStripMenuItem.Name = "フォルダ作成CToolStripMenuItem";
+            this.フォルダ作成CToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.フォルダ作成CToolStripMenuItem.Text = "フォルダ作成(&C)";
+            this.フォルダ作成CToolStripMenuItem.Click += new System.EventHandler(this.フォルダ作成CToolStripMenuItem_Click);
+            // 
+            // testbtn
+            // 
+            this.testbtn.Location = new System.Drawing.Point(340, 55);
+            this.testbtn.Name = "testbtn";
+            this.testbtn.Size = new System.Drawing.Size(70, 23);
+            this.testbtn.TabIndex = 9;
+            this.testbtn.Text = "テスト";
+            this.testbtn.UseVisualStyleBackColor = true;
+            this.testbtn.Click += new System.EventHandler(this.testbtn_Click);
+            // 
+            // topText
+            // 
+            this.topText.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.topText.FormattingEnabled = true;
+            this.topText.Location = new System.Drawing.Point(426, 31);
+            this.topText.Name = "topText";
+            this.topText.Size = new System.Drawing.Size(60, 20);
+            this.topText.TabIndex = 10;
+            // 
+            // dirSize
+            // 
+            this.dirSize.Location = new System.Drawing.Point(278, 58);
+            this.dirSize.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.dirSize.Minimum = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            this.dirSize.Name = "dirSize";
+            this.dirSize.Size = new System.Drawing.Size(47, 19);
+            this.dirSize.TabIndex = 12;
+            this.dirSize.Value = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(178, 62);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(94, 12);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "フォルダ先頭無視：";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(443, 292);
+            this.ClientSize = new System.Drawing.Size(500, 292);
+            this.Controls.Add(this.dirSize);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.topText);
             this.Controls.Add(this.testbtn);
             this.Controls.Add(this.resultView);
@@ -259,6 +297,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.resultView)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dirSize)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -285,6 +324,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.NumericUpDown dirSize;
+        private System.Windows.Forms.Label label4;
     }
 }
 

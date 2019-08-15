@@ -70,31 +70,49 @@ namespace FileCenter0
 
             foreach (string fn in files)
             {
-                if (Path.GetFileName(fn).Length < TOPLENGTH) { continue; }
                 int cs = (int)compSize.Value;
-                if (Path.GetFileName(fn).Length < TOPLENGTH + cs)
-                {
-                    cs = Path.GetFileName(fn).Length - TOPLENGTH;
-                }
+                if (Path.GetFileName(fn).Length < cs) { continue; }
 
-                string filenm = Path.GetFileName(fn).Substring(TOPLENGTH, (int)compSize.Value);
+                string filename = Path.GetFileName(fn).Substring(cs);
+                string outdir = string.Empty;
+                int mtcnt = 0;
 
                 foreach (string dn in dirs)
                 {
                     string dirnm = Path.GetFileName(dn);
-                    dirnm = dirnm.Substring(4, cs);
+                    dirnm = dirnm.Substring((int)dirSize.Value);
 
-                    if (filenm.Equals(dirnm))
+                    for (int i = 1; i < filename.Length; i++)
                     {
-                        resultView.Rows.Add(true, Path.GetFileName(dn), Path.GetFileName(fn).Substring(TOPLENGTH)
-                            , fn, string.Format("{0}\\{1}", dn, Path.GetFileName(fn)));
-                        if (flg)
+                        if (dirnm.Length>=i && filename.Substring(0, i).Equals(dirnm.Substring(0, i)))
                         {
-                            File.Move(fn, string.Format("{0}\\{1}", dn, Path.GetFileName(fn)));
-                            cnt++;
+                            int e = 0;
+                            e++;
+                        }
+                        else
+                        {
+                            if (i > 1 && i >mtcnt)
+                            {
+                                mtcnt = i;
+                                outdir = dn;                                
+                            }
+                            break;
                         }
                     }
+
                 }
+
+                if (mtcnt > 0)
+                {
+                    resultView.Rows.Add(true, Path.GetFileName(outdir), filename, fn, string.Format("{0}\\{1}", outdir, Path.GetFileName(fn)));
+
+                    if (flg)
+                    {
+                         File.Move(fn, string.Format("{0}\\{1}", outdir, Path.GetFileName(fn)));
+                        cnt++;
+                    }
+                }
+                    
             }
 
             resultView.AlternatingRowsDefaultCellStyle.BackColor = Color.PowderBlue;
