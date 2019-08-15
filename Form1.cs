@@ -102,7 +102,7 @@ namespace FileCenter0
 
                 }
 
-                if (mtcnt > 0)
+                if (mtcnt >= (int)minSize.Value)
                 {
                     resultView.Rows.Add(true, Path.GetFileName(outdir), filename, fn, string.Format("{0}\\{1}", outdir, Path.GetFileName(fn)));
 
