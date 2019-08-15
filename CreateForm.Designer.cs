@@ -38,9 +38,9 @@
             // 
             // folderList
             // 
-            this.folderList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.folderList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.folderList.Location = new System.Drawing.Point(12, 12);
             this.folderList.Multiline = true;
             this.folderList.Name = "folderList";
@@ -49,6 +49,7 @@
             // 
             // createBtn
             // 
+            this.createBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.createBtn.Location = new System.Drawing.Point(323, 232);
             this.createBtn.Name = "createBtn";
             this.createBtn.Size = new System.Drawing.Size(134, 23);
@@ -59,6 +60,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(14, 237);
             this.label1.Name = "label1";
@@ -68,6 +70,7 @@
             // 
             // type
             // 
+            this.type.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.type.Location = new System.Drawing.Point(67, 234);
             this.type.Name = "type";
             this.type.Size = new System.Drawing.Size(76, 19);
@@ -76,6 +79,7 @@
             // 
             // reset
             // 
+            this.reset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.reset.Location = new System.Drawing.Point(149, 232);
             this.reset.Name = "reset";
             this.reset.Size = new System.Drawing.Size(75, 23);
@@ -86,6 +90,7 @@
             // 
             // ht
             // 
+            this.ht.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.ht.Location = new System.Drawing.Point(230, 234);
             this.ht.Name = "ht";
             this.ht.Size = new System.Drawing.Size(87, 19);
