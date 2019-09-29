@@ -39,7 +39,7 @@ namespace FileCenter0
             string[] files = Directory.GetFiles(dirPath, "*" + type.Text);
             foreach (string fn in files)
             {
-                string buf = Path.GetFileName(fn).Substring((int)compSize.Value).Replace(type.Text, string.Empty);
+                string buf = Path.GetFileName(fn).Substring(9).Replace(type.Text, string.Empty);
                 if (0 < buf.IndexOf('[')) { buf = buf.Substring(0, buf.IndexOf('[')); }
                 if (0 < buf.IndexOf("u")) { buf = buf.Substring(0, buf.IndexOf("u")); }
                 if (0 < buf.IndexOf("”")) { buf = buf.Substring(0, buf.IndexOf("”")); }
