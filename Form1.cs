@@ -84,7 +84,7 @@ namespace FileCenter0
 
                     for (int i = 1; i < filename.Length; i++)
                     {
-                        if (dirnm.Length>=i && filename.Substring(0, i).Equals(dirnm.Substring(0, i)))
+                        if (dirnm.Length>=i && filename.Substring(0, i).Replace("[êV]", string.Empty).Replace("[èI]", String.Empty).Equals(dirnm.Substring(0, i)))
                         {
                             int e = 0;
                             e++;
